@@ -5,7 +5,13 @@ Returns: an integer
 def single_number(arr):
     # Your code here
 
-    pass
+    no_duplicate_lst = []
+    for i in arr:
+        if i not in no_duplicate_lst:
+            no_duplicate_lst.append(i)
+        else:
+            no_duplicate_lst.remove(i)
+    return no_duplicate_lst.pop()
 
 
 if __name__ == '__main__':
