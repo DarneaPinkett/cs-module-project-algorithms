@@ -4,8 +4,22 @@ Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
     # Your code here
+    if len(arr) < 2:
+        raise IndexError
 
-    pass
+    product_of_all_other_numbers = [None] * len(arr)
+
+    product_so_far = 1
+    for i in range(len(arr)):
+        product_of_all_other_numbers[i] = product_so_far
+        product_so_far *= arr[i]
+
+    product_so_far = 1
+    for i in range(len(arr) - 1, -1 ,-1):
+        product_of_all_other_numbers[i] *= product_so_far
+        product_so_far *= arr[i]
+
+    return product_of_all_other_numbers
 
 
 if __name__ == '__main__':
